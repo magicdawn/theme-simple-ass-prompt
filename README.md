@@ -1,8 +1,31 @@
+# How to install
+
+> reference https://github.com/oh-my-fish/oh-my-fish/issues/684#issuecomment-512642384
+
+## cd to omf dir
+
+- `omf cd; cd themes;`
+
+## install
+
+- `git clone https://github.com/magicdawn/theme-simple-ass-prompt.git ./simple-ass-prompt-@magicdawn`
+
+## use it
+
+- `omf theme simple-ass-prompt-@magicdawn`
+
+---
+
+# below is the original readme ⬇️⬇️⬇️
+
+---
+
 <img
 src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg"
 align="left" width="144px" height="144px"/>
 
 #### simple-ass-prompt
+
 > A theme for [Oh My Fish][omf-link].
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
@@ -18,9 +41,9 @@ $ omf install simple-ass-prompt
 ```
 
 ## Features
+
 This is [Mathias Bynens][mths] Bash prompt ported to Fish with a few changed
 icons and added functionalities. As he put it:
-
 
 > Shell prompt based on the Solarized Dark theme.
 > Screenshot: http://i.imgur.com/EkEtphC.png
@@ -43,18 +66,23 @@ Features:
 - The last command failed is displayed with `↪` in red
 
 ## Screenshot
+
 Git Usage
+
 <p align="center">
 <img src="http://cl.ly/1G0Z2j3A0C1Q/Screen%20Recording%202015-12-16%20at%2010.09%20pm.gif">
 </p>
 
 [VirtualFish][vf] Usage
+
 <p align="center">
 <img src="http://cl.ly/image/1Y36043M2U3M/simple_ass_prompt_virtual.png">
 </p>
 
 ## Configuration
+
 You can change the greeting message with:
+
 ```fish
 set -g simple_ass_prompt_greeting MyGreeting
 ```
@@ -63,11 +91,10 @@ set -g simple_ass_prompt_greeting MyGreeting
 
 [MIT][mit] © [lfiolhais][author] et [al][contributors]
 
-
-[mit]:            http://opensource.org/licenses/MIT
-[author]:         http://github.com/lfiolhais
-[contributors]:   https://github.com/lfiolhais/simple_ass_prompt/graphs/contributors
-[omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
+[mit]: http://opensource.org/licenses/MIT
+[author]: http://github.com/lfiolhais
+[contributors]: https://github.com/lfiolhais/simple_ass_prompt/graphs/contributors
+[omf-link]: https://www.github.com/oh-my-fish/oh-my-fish
 [mths]: https://github.com/mathiasbynens/dotfiles
-[license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
+[license-badge]: https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 [vf]: https://github.com/adambrenecki/virtualfish
