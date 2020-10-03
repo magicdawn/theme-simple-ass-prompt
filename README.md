@@ -2,17 +2,27 @@
 
 > reference https://github.com/oh-my-fish/oh-my-fish/issues/684#issuecomment-512642384
 
-## cd to omf dir
+## Steps
+
+### cd to omf dir
 
 - `omf cd; cd themes;`
 
-## install
+### install
 
 - `git clone https://github.com/magicdawn/theme-simple-ass-prompt.git ./simple-ass-prompt-@magicdawn`
 
-## use it
+### use it
 
 - `omf theme simple-ass-prompt-@magicdawn`
+
+## Screenshot
+
+![image](https://user-images.githubusercontent.com/4067115/94984583-07d0a880-0580-11eb-9320-3c2668153fe5.png)
+
+- full path
+- git chars/colors change
+- `=>` prompt
 
 ---
 
