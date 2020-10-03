@@ -1,8 +1,9 @@
 # Status Chars
-set __fish_git_prompt_char_dirtystate '!'
+# from log-symbols
+set __fish_git_prompt_char_dirtystate '✖'
 set __fish_git_prompt_char_untrackedfiles '☡'
 set __fish_git_prompt_char_stashstate '↩'
-set __fish_git_prompt_char_cleanstate '✓'
+set __fish_git_prompt_char_cleanstate '✔'
 
 # Display the state of the branch when inside of a git repo
 function __simple_ass_prompt_parse_git_branch_state -d "Display the state of the branch"
@@ -10,21 +11,27 @@ function __simple_ass_prompt_parse_git_branch_state -d "Display the state of the
 
   # Check for changes to be commited
   if git_is_touched
+    set_color yellow
     echo -n "$__fish_git_prompt_char_dirtystate"
   else
+    set_color green
     echo -n "$__fish_git_prompt_char_cleanstate"
   end
 
   # Check for untracked files
   set -l git_untracked (command git ls-files --others --exclude-standard 2> /dev/null)
   if [ -n "$git_untracked" ]
+    set_color red
     echo -n "$__fish_git_prompt_char_untrackedfiles"
   end
 
   # Check for stashed files
-  if git_is_stashed
-    echo -n "$__fish_git_prompt_char_stashstate"
-  end
+  # if git_is_stashed
+  #   echo -n "$__fish_git_prompt_char_stashstate"
+  # end
+
+  # get back color for `]`
+  set_color 0087ff
 
   # Check if branch is ahead, behind or diverged of remote
   git_ahead
@@ -76,7 +83,8 @@ end
 # Get Project Working Directory
 function __simple_ass_prompt_pwd -d "Get PWD"
   set_color $fish_color_cwd
-  printf '%s ' (prompt_pwd)
+  # original use (prompt_pwd)
+  printf '%s ' (string replace -r '^'"$HOME"'($|/)' '~$1' $PWD)
 end
 
 # Simple-ass-prompt
@@ -86,7 +94,7 @@ function fish_prompt
   # Logged in user
   __simple_ass_prompt_get_user
   set_color normal
-  printf ' at '
+  printf '@'
 
   # Machine logged in to
   __simple_ass_prompt_get_host
@@ -110,10 +118,11 @@ function fish_prompt
     printf "(python:%s) " (set_color blue)(basename $VIRTUAL_ENV)(set_color normal)
   end
 
+  set_color green
   if test $code -eq 127
     set_color red
   end
+  printf '=> '
 
-  printf '↪ '
   set_color normal
 end
